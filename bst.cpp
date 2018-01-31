@@ -117,9 +117,6 @@ void InsertNodeInto(BitTree &rnode, int data)
 }
 
 //Delete element
-
-
-
 void DeleteElement(BitTree &rnode, int data)
 {
     BitTree p = rnode;
