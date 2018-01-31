@@ -1,5 +1,4 @@
 #include<iostream>
-//#include<iomanip>
 #include<stdlib.h>
 #include<stack>
 #include<queue>
@@ -342,8 +341,29 @@ void __PostOrder(BitTree rnode)
     }
 }
 
-//calculate the width of tree
-int TreeWidth(BitTree rnode)
+//layer traversal(loop version)
+void LayerOrder(BitTree rnode)
+{
+    if(!rnode)
+	return;
+    queue<BitTree> tree;
+    tree.push(rnode);
+    BitTree cur = NULL;
+    while(!tree.empty())
+    {
+	cur = tree.front();
+	cout << cur->data << " ";
+	tree.pop();
+	if(cur->lchild != NULL)
+	    tree.push(cur-lchild);
+	if(cur->rchild != NULL)
+	    tree.push(cur->rchild);
+    }
+}
+
+
+//calculate the width of the tree
+int GetTreeWidth(BitTree rnode)
 {
     if(!rnode)
 	return 0;
@@ -370,4 +390,12 @@ int TreeWidth(BitTree rnode)
     return tree_width;
 }
 
-
+//calculate the height of the tree
+int GetTreeHeight(BitTree rnode)
+{
+    if(!rnode)
+	return 0;
+    int ltree_height = GetTreeHeight(rnode->lchild);
+    int rtree_height = GetTreeHeight(rnode->rchild);
+    return ltree_height > rtree_height ? ltree_height+1 : rtree_height+1; 
+}
