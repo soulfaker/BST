@@ -31,7 +31,6 @@ BitTree SearchMinValue(BitTree rnode)
 	p = p->lchild;
 	if(p->lchild == NULL) return p;
     }
-    
 }
 
 //Find the node with max value(recursion version)
