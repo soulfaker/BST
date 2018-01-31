@@ -25,12 +25,12 @@ BitTree SearchMinNode(BitTree rnode)
 BitTree SearchMinValue(BitTree rnode)
 {
     BitTree p = rnode;
+    if(p == NULL || p->lchild == NULL) return p;
     while(p)
     {
 	p = p->lchild;
 	if(p->lchild == NULL) return p;
     }
-    return NULL;
     
 }
 
@@ -49,12 +49,12 @@ BitTree SearchMaxNode(BitTree rnode)
 BitTree SearchMaxValue(BitTree rnode)
 {
     BitTree p = rnode;
+    if(p == NULL || p->rchild == NULL) return p;
     while(p)
     {
 	p = p->rchild;
-	if(p->rchild == NULL) return p;
+	if(p->rchild != NULL) continue;
     }
-    return NULL;
 }
 
 //Find the node with the given value(recursion version)
