@@ -371,21 +371,3 @@ int TreeWidth(BitTree rnode)
 }
 
 
-int main(void)
-{
-    BitTree p = NULL;
-    int a[10] = {10,2,8,6,3,11,13,7,9,4};
-    for(int i=0;i<10;i++)
-    {
-	InsertNodeInto(p,a[i]);
-    }
-
-    PreOrder(p);
-    _PreOrder(p);
-    InOrder(p);
-    _InOrder(p);
-    PostOrder(p);
-    _PostOrder(p);
-
-    return 0;
-}
