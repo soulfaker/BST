@@ -96,6 +96,7 @@ void InsertNodeInto(BitTree &rnode, int data)
     }
     if(NodeForValue(rnode, data))
     {
+	free(p);
 	return;
     }
     BitTree pos = NULL, rootnode = rnode;
